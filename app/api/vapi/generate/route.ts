@@ -47,5 +47,9 @@ export async function POST(request: Request) {
     }
 
     export async function GET() {
-    return Response.json({ success: true, data: "Thank you!" }, { status: 200 });
-}
+        try {
+            return Response.json({ success: true, data: "Thank you!" }, { status: 200 });
+        } catch (error) {
+            return Response.json({ success: false, data: "Something Went wrong" }, { status: 500 });
+        }
+    }

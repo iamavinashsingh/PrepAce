@@ -19,18 +19,34 @@ interface FormFieldsProps<T extends FieldValues>{
 
 }
 
-const FormField = <T extends FieldValues>({control, name , placeholder , lable, type="text"}: FormFieldsProps<T>) => (
-    <Controller name={name} 
-                control={control} 
-                render={({field})=>(
-                    <FormItem>
-                        <FormLabel className='label'>{lable}</FormLabel>
-                        <FormControl>
-                            <Input className='input' type={type} placeholder={placeholder} {...field} />
-                        </FormControl>
-                        <FormMessage />
-                    </FormItem>
-                )}
+const FormField = <T extends FieldValues, K extends Path<T>>({
+    control,
+    name,
+    placeholder,
+    lable,
+    type = "text",
+    children,
+    ...rest
+}: FormFieldsProps<T> & { children?: React.ReactNode } & React.ComponentProps<typeof Input>) => (
+    <Controller
+        name={name as K}
+        control={control}
+        render={({ field }) => (
+            <FormItem>
+                <FormLabel className='label'>{lable}</FormLabel>
+                <FormControl>
+                    <Input
+                        className='input'
+                        type={type}
+                        placeholder={placeholder}
+                        {...field}
+                        {...rest}
+                    />
+                </FormControl>
+                {children}
+                <FormMessage />
+            </FormItem>
+        )}
     />
 )
 

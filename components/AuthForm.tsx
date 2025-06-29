@@ -110,7 +110,7 @@ const authFormSchema = (type: FormType) => {
                 className="w-full space-y-6 mt-4 form"
             >
                 {!isSignIn && (
-                <FormField
+                <FormField<z.infer<typeof formSchema>, "name">
                     control={form.control}
                     name="name"
                     label="Name"
@@ -119,7 +119,7 @@ const authFormSchema = (type: FormType) => {
                 />
                 )}
 
-                <FormField
+                <FormField<z.infer<typeof formSchema>, "email">
                 control={form.control}
                 name="email"
                 label="Email"
@@ -127,7 +127,7 @@ const authFormSchema = (type: FormType) => {
                 type="email"
                 />
 
-                <FormField
+                <FormField<z.infer<typeof formSchema>, "password">
                 control={form.control}
                 name="password"
                 label="Password"
