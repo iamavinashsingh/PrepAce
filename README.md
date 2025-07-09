@@ -1,6 +1,6 @@
-# PrepWise
+# PrepAce
 
-PrepWise is an AI-powered platform for practicing mock job interviews and receiving instant, structured feedback. It helps users prepare for real-world interviews by simulating behavioral, technical, and mixed interview scenarios, leveraging advanced AI models for question generation and feedback.
+PrepAce is an AI-powered platform for practicing mock job interviews and receiving instant, structured feedback. It helps users prepare for real-world interviews by simulating behavioral, technical, and mixed interview scenarios, leveraging advanced AI models for question generation and feedback.
 
 ---
 
@@ -36,8 +36,8 @@ PrepWise is an AI-powered platform for practicing mock job interviews and receiv
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/prepwise.git
-   cd prepwise
+   git clone https://github.com/your-username/PrepAce.git
+   cd PrepAce
    ```
 
 2. **Install dependencies**
